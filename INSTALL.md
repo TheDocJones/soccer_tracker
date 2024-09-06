@@ -25,3 +25,43 @@
 1. Allow for other databases:  MySQL, SQL Server, MariaDB, Postgres
 2. Allow for other web servers: nginx, IIS
 3. Setup TLS
+
+
+
+
+# ##################################################
+# Local DB User creation
+# ##################################################
+CREATE TABLESPACE soccer_tracker_data
+  DATAFILE '/opt/oracle/oradata/FREE/FREEPDB1/soccer_tracker_data01.dbf'
+    SIZE 1G
+    AUTOEXTEND ON
+      NEXT 512M
+      MAXSIZE 2G
+  EXTENT MANAGEMENT LOCAL
+    UNIFORM SIZE 128K DEFAULT
+  NOCOMPRESS
+  SEGMENT SPACE MANAGEMENT AUTO
+;
+CREATE TABLESPACE soccer_tracker_index
+  DATAFILE '/opt/oracle/oradata/FREE/FREEPDB1/soccer_tracker_index01.dbf'
+    SIZE 256M
+    AUTOEXTEND ON
+      NEXT 256M
+      MAXSIZE 1G
+  EXTENT MANAGEMENT LOCAL
+    UNIFORM SIZE 128K DEFAULT
+  NOCOMPRESS
+  SEGMENT SPACE MANAGEMENT AUTO
+;
+CREATE USER soccer_owner
+  IDENTIFIED BY soccer_owner
+  DEFAULT TABLESPACE soccer_tracker_data
+  TEMPORARY TABLESPACE temp
+;
+ALTER USER soccer_owner
+  QUOTA UNLIMITED ON soccer_tracker_data
+;
+ALTER USER soccer_owner
+  QUOTA UNLIMITED ON soccer_tracker_index
+;

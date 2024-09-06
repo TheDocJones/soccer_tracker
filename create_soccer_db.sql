@@ -208,3 +208,15 @@ ALTER TABLE TEAMS ADD CONSTRAINT TEAMS_LEAGUE_FK FOREIGN KEY (LEAGUE_ID)
 --------------------------------------------------------
 
 
+--------------------------------------------------------
+--  DDL for directories
+--------------------------------------------------------
+CREATE DIRECTORY soccer_data_dir AS '/mnt/point/soccer_tracker/data'
+;
+GRANT READ,WRITE ON DIRECTORY soccer_data_dir TO soccer_owner
+;
+CREATE DIRECTORY soccer_bin_dir AS '/mnt/point/soccer_tracker/bin'
+;
+GRANT READ,WRITE,EXECUTE ON DIRECTORY soccer_bin_dir TO soccer_owner
+;
+--------------------------------------------------------
