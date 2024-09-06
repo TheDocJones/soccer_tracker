@@ -7,14 +7,13 @@
 3. Create database schema owner (ex: soccer_owner)
 4. Create database user for read only access (ex: soccer_web)
 5. Create database user for administrative access (ex: soccer_admin)
-6. Use create_soccer_db.sql to create database objects
+6. Use create_soccer_db.sql to create & load database objects
    -- Tables
    -- Sequences
    -- Triggers
    -- Directory
-7. Use load_soccer_db.sql to load initial dataset
-8. Create web server in Oracle Cloud
-9. Setup DNS entry
+7. Create web server in Oracle Cloud
+8. Setup DNS entry
 
 
 
