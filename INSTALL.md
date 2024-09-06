@@ -65,3 +65,19 @@ ALTER USER soccer_owner
 ALTER USER soccer_owner
   QUOTA UNLIMITED ON soccer_tracker_index
 ;
+GRANT CONNECT TO soccer_owner
+;
+GRANT RESOURCE TO soccer_owner
+;
+GRANT SELECT_CATALOG_ROLE TO soccer_owner
+;
+GRANT DB_DEVELOPER_ROLE TO soccer_owner
+;
+GRANT XDBADMIN TO soccer_owner
+;
+ALTER USER soccer_owner DEFAULT ROLE ALL
+;
+GRANT CREATE JOB TO soccer_owner
+;
+GRANT CREATE ANY DIRECTORY TO soccer_owner
+;
