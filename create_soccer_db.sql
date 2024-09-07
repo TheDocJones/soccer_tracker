@@ -492,5 +492,6 @@ INSERT INTO teams (team_id,team_nm,stadium_id,league_id) VALUES (134,'Wolverhamp
 ALTER SEQUENCE team_id_seq RESTART START WITH 135;
 --| ----------
 ALTER TRIGGER teams_trg1 ENABLE;
+--| ==================================================
 
 
