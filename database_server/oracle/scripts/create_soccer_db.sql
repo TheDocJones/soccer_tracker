@@ -260,6 +260,95 @@ CREATE DIRECTORY soccer_bin_dir AS '/mnt/point/soccer_tracker/bin'
 --| ==================================================
 --| Load initial data
 --| ==================================================
+CREATE OR REPLACE PROCEDURE initial_data_load AS
+  v_team_id     teams.team_id%TYPE;
+  v_league_id   leagues.league_id%TYPE;
+  v_stadium_id  stadiums.stadium_id%TYPE;
+  v_cnt         NUMBER;
+  CURSOR c_data IS SELECT team ,league ,city ,country ,stadium
+                         ,capacity ,latitude ,longitude
+                     FROM xt_initial_data_load;
+BEGIN
+  FOR v_data IN c_data LOOP
+  --|===================
+  --| LEAGUE
+  --|===================
+    --| Check if League exists
+    SELECT count(*)
+      INTO v_cnt
+      FROM leagues
+      WHERE league_nm = v_data.league;
+    --| If League does not exist, insert into LEAGUES table
+    IF v_cnt = 0 THEN
+      INSERT INTO leagues (league_nm)
+        VALUES (v_data.league);
+    END IF;
+    SELECT league_id
+      INTO v_league_id
+      FROM leagues
+      WHERE league_nm = v_data.league;
+    --| Update LEAGUES information if necessary
+  --|===================
+
+  --|===================
+  --| STADIUM
+  --|===================
+    --| Check if Stadium exists
+    SELECT count(*)
+      INTO v_cnt
+      FROM stadiums
+      WHERE stadium_nm = v_data.stadium;
+    --| If Stadium does not exist, insert into STADIUMS table
+    IF v_cnt = 0 THEN
+      INSERT INTO stadiums (stadium_nm, capacity, country_nm, city_nm, latitude, longitude)
+        VALUES (v_data.stadium, v_data.capacity, v_data.country, v_data.city, v_data.latitude, v_data.longitude);
+    END IF;
+    --| Update STADIUMS information if necessary (TO DO: add code to check specific columns)
+    SELECT stadium_id
+      INTO v_stadium_id
+      FROM stadiums
+      WHERE stadium_nm = v_data.stadium;
+    UPDATE stadiums
+      SET capacity = v_data.capacity
+         ,country_nm = v_data.country
+         ,city_nm = v_data.city
+         ,latitude = v_data.latitude
+         ,longitude = v_data.longitude
+      WHERE stadium_id = v_stadium_id;
+  --|===================
+
+  --|===================
+  --| TEAM
+  --|===================
+    --| Check if Team exists
+    SELECT count(*)
+      INTO v_cnt
+      FROM teams
+      WHERE team_nm = v_data.team;
+    --| If Team does not exist, insert into TEAM table
+    IF v_cnt = 0 THEN
+      INSERT INTO teams (team_nm, stadium_id, league_id)
+        VALUES (v_data.team, v_stadium_id, v_league_id);
+    END IF;
+  --| Update TEAMS information if necessary
+    SELECT team_id
+      INTO v_team_id
+      FROM teams
+      WHERE team_nm = v_data.team;
+    UPDATE teams
+      SET stadium_id = v_stadium_id
+         ,league_id = v_league_id
+      WHERE team_id = v_team_id;
+  --|===================
+
+  END LOOP;
+
+  COMMIT;
+
+END initial_data_load;
+/
+--| ==================================================
+
 
 --| ==================================================
 --| INSERTING INTO LEAGUES
