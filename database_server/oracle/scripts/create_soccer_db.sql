@@ -96,6 +96,42 @@ CREATE TABLE matches
      REFERENCES teams (team_id) ENABLE
   )
 ;
+--
+----------
+--
+CREATE TABLE xt_datafile_matches
+  (home_team                    VARCHAR2(128 BYTE)
+  ,away_team                    VARCHAR2(128 BYTE)
+  ,match_date                   DATE
+  ,broadcast_options            VARCHAR2(128 BYTE)
+  ,home_goals                   NUMBER
+  ,away_goals                   NUMBER
+  ,spacer1                      VARCHAR2(128 BYTE)
+  ,home_yellows                 NUMBER
+  ,home_reds                    NUMBER
+  ,away_yellows                 NUMBER
+  ,away_reds                    NUMBER
+  ,away_travel_distance         NUMBER
+  )
+  ORGANIZATION EXTERNAL 
+  (TYPE ORACLE_LOADER
+   DEFAULT DIRECTORY "SOCCER_DATA_DIR"
+   ACCESS PARAMETERS
+   (RECORDS DELIMITED BY NEWLINE
+    NOBADFILE
+    NOLOGFILE
+    FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+    (match_date DATE 'M/D/YY HH:MI AM')
+   )
+   LOCATION
+   ( 'sticky.txt'
+   )
+  )
+  REJECT LIMIT UNLIMITED
+;
+--
+----------
+--
 --------------------------------------------------------
 
 
