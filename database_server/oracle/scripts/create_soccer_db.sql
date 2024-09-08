@@ -99,6 +99,36 @@ CREATE TABLE matches
 --
 ----------
 --
+CREATE TABLE xt_datafiles
+  (file_permissions   VARCHAR2(15 BYTE)
+  ,file_link_cnt      VARCHAR2(1 BYTE)
+  ,file_owner         VARCHAR2(25 BYTE)
+  ,file_group         VARCHAR2(25 BYTE)
+  ,file_size          VARCHAR2(50 BYTE)
+  ,file_date_mth      VARCHAR2(5 BYTE)
+  ,file_date_day      VARCHAR2(5 BYTE)
+  ,file_date_year     VARCHAR2(4 BYTE)
+  ,file_date_time     VARCHAR2(8 BYTE)
+  ,file_name          VARCHAR2(255 BYTE)
+  )
+  ORGANIZATION EXTERNAL 
+    (TYPE ORACLE_LOADER
+     DEFAULT DIRECTORY "SOCCER_DATA_DIR"
+     ACCESS PARAMETERS
+       (RECORDS DELIMITED BY NEWLINE
+        NOBADFILE
+        NOLOGFILE
+        LOAD WHEN file_size != '<DIR>'
+        PREPROCESSOR soccer_bin_dir: 'list_files.sh'
+        FIELDS TERMINATED BY WHITESPACE
+       )
+     LOCATION ('sticky.txt')
+    )
+  REJECT LIMIT UNLIMITED
+;
+--
+----------
+--
 CREATE TABLE xt_datafile_matches
   (home_team                    VARCHAR2(128 BYTE)
   ,away_team                    VARCHAR2(128 BYTE)
@@ -106,12 +136,10 @@ CREATE TABLE xt_datafile_matches
   ,broadcast_options            VARCHAR2(128 BYTE)
   ,home_goals                   NUMBER
   ,away_goals                   NUMBER
-  ,spacer1                      VARCHAR2(128 BYTE)
   ,home_yellows                 NUMBER
   ,home_reds                    NUMBER
   ,away_yellows                 NUMBER
   ,away_reds                    NUMBER
-  ,away_travel_distance         NUMBER
   )
   ORGANIZATION EXTERNAL 
   (TYPE ORACLE_LOADER
@@ -123,10 +151,34 @@ CREATE TABLE xt_datafile_matches
     FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
     (match_date DATE 'M/D/YY HH:MI AM')
    )
-   LOCATION
-   ( 'sticky.txt'
-   )
+   LOCATION ('sticky.txt')
   )
+  REJECT LIMIT UNLIMITED
+;
+--
+----------
+--
+CREATE TABLE xt_initial_data_load
+  (team               VARCHAR2(128 BYTE)
+  ,league             VARCHAR2(128 BYTE)
+  ,city               VARCHAR2(128 BYTE)
+  ,country            VARCHAR2(128 BYTE)
+  ,stadium            VARCHAR2(128 BYTE)
+  ,capacity           NUMBER
+  ,latitude           NUMBER
+  ,longitude          NUMBER
+  )
+  ORGANIZATION EXTERNAL 
+    (TYPE ORACLE_LOADER
+     DEFAULT DIRECTORY "SOCCER_DATA_DIR"
+     ACCESS PARAMETERS
+       (RECORDS DELIMITED BY NEWLINE
+        NOBADFILE
+        NOLOGFILE
+        FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+        )
+     LOCATION ('initial_data_load--team-league-stadium.csv')
+    )
   REJECT LIMIT UNLIMITED
 ;
 --
