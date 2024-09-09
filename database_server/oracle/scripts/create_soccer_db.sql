@@ -130,10 +130,10 @@ CREATE TABLE xt_datafiles
 ----------
 --
 CREATE TABLE xt_datafile_matches
-  (home_team                    VARCHAR2(128 BYTE)
-  ,away_team                    VARCHAR2(128 BYTE)
-  ,match_date                   DATE
-  ,broadcast_options            VARCHAR2(128 BYTE)
+  (home_team                    VARCHAR2(128)
+  ,away_team                    VARCHAR2(128)
+  ,match_date                   VARCHAR2(128)
+  ,broadcast_options            VARCHAR2(128)
   ,home_goals                   NUMBER
   ,away_goals                   NUMBER
   ,home_yellows                 NUMBER
@@ -142,17 +142,16 @@ CREATE TABLE xt_datafile_matches
   ,away_reds                    NUMBER
   )
   ORGANIZATION EXTERNAL 
-  (TYPE ORACLE_LOADER
-   DEFAULT DIRECTORY "SOCCER_DATA_DIR"
-   ACCESS PARAMETERS
-   (RECORDS DELIMITED BY NEWLINE
-    NOBADFILE
-    NOLOGFILE
-    FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
-    (match_date DATE 'M/D/YY HH:MI AM')
-   )
-   LOCATION ('sticky.txt')
-  )
+    (TYPE ORACLE_LOADER
+     DEFAULT DIRECTORY "SOCCER_DATA_DIR"
+     ACCESS PARAMETERS
+       (RECORDS DELIMITED BY DETECTED NEWLINE
+        NOBADFILE
+        NOLOGFILE
+        FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' MISSING FIELD VALUES ARE NULL
+       )
+      LOCATION ('sticky.txt')
+    )
   REJECT LIMIT UNLIMITED
 ;
 --
