@@ -157,6 +157,32 @@ CREATE TABLE xt_datafile_matches
 --
 ----------
 --
+CREATE TABLE xt_datafile_teams
+  (home_team                    VARCHAR2(128)
+  ,league                       VARCHAR2(128 BYTE)
+  ,city                         VARCHAR2(128 BYTE)
+  ,country                      VARCHAR2(128 BYTE)
+  ,stadium                      VARCHAR2(128 BYTE)
+  ,capacity                     NUMBER
+  ,latitude                     NUMBER
+  ,longitude                    NUMBER
+  )
+  ORGANIZATION EXTERNAL 
+    (TYPE ORACLE_LOADER
+     DEFAULT DIRECTORY "SOCCER_DATA_DIR"
+     ACCESS PARAMETERS
+       (RECORDS DELIMITED BY DETECTED NEWLINE
+        NOBADFILE
+        NOLOGFILE
+        FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' MISSING FIELD VALUES ARE NULL
+       )
+      LOCATION ('sticky.txt')
+    )
+  REJECT LIMIT UNLIMITED
+;
+--
+----------
+--
 CREATE TABLE xt_initial_data_load
   (team               VARCHAR2(128 BYTE)
   ,league             VARCHAR2(128 BYTE)
