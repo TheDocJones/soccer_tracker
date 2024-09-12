@@ -1,0 +1,970 @@
+<head>
+<title>Document Level Style</title>
+<style type="text/css">
+<!--
+.gridline           {
+	                  background:white;
+                    }
+.gridlinealt        {
+	                  background:#EEEEEE;
+                    }
+.gridheader         {
+	                  background:#EEEEEE;
+	                  color:darkgray;
+                    }
+.gridfooter         {
+	                  border-style:none;
+	                  background:black;
+	                  color:white;
+	                  width:100%;
+	                  }
+.bullet             {
+                    list-style-image: url(/dba/uspharma/tools/orasnap_site/pictures/bullet.gif);
+                    }
+.cover              {
+                    background: navy;
+                    color: yellow;
+                    }
+.rover              {
+                    background: black;
+                    color: white;
+                    }
+.selectform         {
+                    border-width:2px;
+                    border-color:#FF9999;
+                    border-style:dashed;
+                    padding:10px;
+                    width:60%;
+                    }
+.selectform_75      {
+                    border-width:2px;
+                    border-color:#FF9999;
+                    border-style:dashed;
+                    padding:10px;
+                    width:75%;
+                    }
+.selectform_95      {
+                    border-width:2px;
+                    border-color:#FF9999;
+                    border-style:dashed;
+                    padding:10px;
+                    width:95%;
+                    }
+.headerline         {
+                    border-style:none;
+                    padding:5px;
+                    background:black;
+                    color:white;
+                    width:100%;
+                    }
+.widelogo           {
+                    color:yellow;
+                    background:black;
+                    font-weight:bold;
+                    font-size:14px;
+                    }
+filter              {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 11pt; /* this affects plain text */
+                    background-color: rgb(255,255,255);
+                    }
+BODY.white          {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 11pt; /* this affects plain text */
+                    background-color: rgb(255,255,255);
+                    }
+BODY.help           {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    color: rgb(0,0,0);
+                    background-color: rgb(255,255,255) /* denim blue for help window */
+                    }
+BODY.menuhead       {
+                    background-color: rgb(163,198,255);
+                    font-size: 100%;
+                    text-align: left;
+                    background-image: url(../pictures/child_page.jpg);
+                    background-repeat: no;
+                    }
+BODY.menubody       {
+                    background-color: rgb(214,214,214);
+                    }
+BODY.easyread       {
+                    background-color: rgb(255,255,255);
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    margin-left: 0;
+                    margin-top: 0;
+                    }
+BODY.logohead       {
+                    background-color: rgb(82,121,184);
+                    }
+.description        {
+                    position: absolute;
+                    top: 2px;
+                    left: 30px;
+                    width: 30px;
+                    }
+.tight              {
+                     position: absolute;
+                     top: 2px; left: 2px;
+                     }
+.runtime             {align:right;
+                      color: red;
+                      width: 100%;
+                      padding-top: 5px;
+                      font-family: "verdana, arial, helvetica, sans-serif";
+                      font-style:italic;
+                      }
+.gw18                {color: green}
+.gwoth               {color: red}
+.notes              {background-image:url(../pictures/notes_shadow.gif);
+                     background-repeat: repeat-x;
+                     background-color: rgb(214,214,214);
+                     background-position: 0, 0;
+                     }
+.notes_image         {
+                     background-image:url(../pictures/notes_image.gif);
+                     background-repeat: no-repeat;
+                     background-color: rgb(214,214,214);
+                     background-position: 0px 0px;
+                     position: absolute;
+                     top: 0px; left:0px;
+                     }
+.notes_text         {
+                     background-color: rgb(214,214,214);
+                     position: absolute;
+                     top: 30px;
+                     left:120px;
+                     }
+.left_column        {
+                    position: absolute;
+                    top: 10px;
+                    width: 230px;
+                    height: 130px;
+                    left: 5px;
+                    font-size: 9pt;
+                    border-style: solid;
+                    background-color: rgb(225,225,225);
+                    border-width: 1px;        /* sets border width on all sides */
+                    padding: 5px;
+                    border-color: black;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.middle_column      {
+                    position: absolute;
+                    top: 10px;
+                    width: 230px;
+                    height: 130px;
+                    left: 245px;
+                    font-size: 9pt;
+                    border-style: solid;
+                    background-color: rgb(225,225,225);
+                    border-width: 1px;        /* sets border width on all sides */
+                    padding: 5px;
+                    border-color: black;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.right_column       {
+                    position: absolute;
+                    top: 10px;
+                    width: 200px;
+                    height: 130px;
+                    left: 485px;
+                    font-size: 9pt;
+                    border-style: solid;
+                    background-color: rgb(225,225,225);
+                    border-width: 1px;        /* sets border width on all sides */
+                    padding: 5px;
+                    border-color: black;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.pulldown           {
+                    position: absolute;
+                    top: 70px;
+                    width: 70px;
+                    left: 100px;
+                    font-size: 8pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.pretty_lights      {
+                    position: absolute;
+                    top: 10px;
+                    left: 5px;
+                    width: 215px;
+                    font-size: 9pt;
+                    border-style: solid;
+                    background-color: rgb(255,255,255);
+                    border-width: 1px;        /* sets border width on all sides */
+                    padding: 5px;
+                    border-color: black;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.pretty_lights_legend      {
+                    position: absolute;
+                    top: 55px;
+                    left: 5px;
+                    width: 215px;
+                    font-size:7pt;
+                    font-weight: normal;
+                    border-style: none;
+                    background-color: rgb(214,214,214);
+                    border-width: 1px;        /* sets border width on all sides */
+                    padding: 5px;
+                    border-color: black;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.sys_gray           {
+                     background-color: rgb(214,214,214);
+                    }
+.carolina_blue      {background-color: rgb(163,198,255);
+                     font-family: "verdana, arial, helvetica, sans-serif";
+                     font-size: 10pt;
+                     font-weight: bold;
+                    }
+.white              {background-color: rgb(255,255,255);
+                     font-family: "verdana, arial, helvetica, sans-serif";
+                     font-size: 5pt;
+                    }
+.gray_gray          {background-color: rgb(191,191,191);
+                     font-family: "verdana, arial, helvetica, sans-serif";
+                     font-size: 5pt;
+                    }
+.light_black        {background-color: rgb(63,63,63);
+                     font-family: "verdana, arial, helvetica, sans-serif";
+                     font-size: 5pt;
+                    }
+P.help              {
+                     font-family: "arial, verdana, helvetica, sans-serif";
+                     font-size: 11pt;
+                     background-color: rgb(255,255,255);
+                    }
+P.easyread          {
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-size: 11pt;
+                    line-height: 150%;
+                    margin-left: 30pt;
+                    margin-right: 100pt;
+                    }
+H1.help             {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 11pt;
+                    color: rgb(0,0,255);
+                    }
+H1.lev1head         {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 16pt;
+                    padding-left: 10pt;
+                    font-weight: bold;
+                    color: rgb(0,0,0);
+                    }
+H2.lev2head         {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 14pt;
+                    font-weight: bold;
+                    color: rgb(0,0,0);
+                    }
+/* ******************************************************************** */
+FONT.lev2head       {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 14pt;
+                    font-weight: bold;
+                    color: rgb(153,51,204);
+                    margin-left: 30;
+                    }
+FONT.lev3head       {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    text-indent: 200pt;
+                    font-size: 12pt;
+                    font-weight: bold;
+                    color: rgb(153,51,204);
+                    text-indent: 0pt;
+                    }
+FONT.eqredbold      {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    color: "red";
+                    text-indent: 0pt;
+                    }
+FONT.eqred          {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    color: "red";
+                    text-indent: 0pt;
+                    }
+FONT.eqbluebold     {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    font-weight: bold;
+                    color: "blue";
+                    text-indent: 0pt;
+                    }
+FONT.eqblue         {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    color: "blue";
+                    text-indent: 0pt;
+                    }
+eqblue              {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    color: "blue";
+                    text-indent: 0pt;
+                    }
+/* ******************************************************************** */
+.DataSortBy         {
+                    text-align: center;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-size: 12pt;
+                    font-weight: bold;
+                    text-align: center;
+                    border: solid black 0px;
+                    border-spacing: 2px;
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                    padding-left: 2px;
+                    padding-right: 2px;
+                    }
+TABLE.data          {
+                    background-color: rgb(0,0,0);
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.data_small         {
+                    border-spacing: 0px;
+                    border-width: 0px;
+                    border: solid black 0px;
+                    font-size: 8pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    margin-bottom: 0;
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 0;
+                    padding-top: 0px;
+                    padding-bottom: 0px;
+                    padding-left: 0px;
+                    padding-right: 0px;
+                    }
+TABLE.data_stat     {
+                    background-color: rgb(0,0,0);
+                    font-size: 9pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+TABLE.datatitle     {
+                    background-color: rgb(255,255,255);
+                    font-size: 11pt;
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    }
+TABLE.reportlist         {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 11pt;
+                    text-align: left;
+                    background-color: rgb(221,225,226);
+                    color: rgb(0,0,0)
+                    }
+TABLE.easyread      {
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-size: 10pt;
+                    text-align: left;
+                    background-color: rgb(210,210,210);
+                    color: rgb(0,0,0)
+                    }
+TABLE.skeleton      {
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-size: 10pt;
+                    background-color: transparent;
+                    color: rgb(0,0,0);
+                    border-width: 0;
+                    }
+TABLE.skeleton_today{
+                    background-color: rgb(127,127,127);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    border-width: 0;
+                    }
+TABLE.skeleton_odd  {
+                    background-color: rgb(255,255,255);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    border-width: 0;
+                    }
+TABLE.skeleton_even {
+                    background-color: rgb(214,214,214);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    border-width: 0;
+                    }
+TR.skeleton         {
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-size: 10pt;
+                    background-color: transparent;
+                    color: rgb(0,0,0);
+                    border-width: 0;
+                    }
+TD.skeleton         {
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-size: 10pt;
+                    background-color: transparent;
+                    color: rgb(0,0,0);
+                    border-width: 0;
+                    }
+TD.report           {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    text-align: left;
+                    color: rgb(0,0,0)
+                    }
+TD.data_stat        {
+                    background-color: rgb(255,255,255);
+                    text-align: center;
+                    font-size: 9pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: center;
+                    }
+TD.data_c           {
+                    background-color: rgb(255,255,255);
+                    text-align: Center;
+                    font-size: 10pt;
+                    font-family: "Courier New";
+                    vertical-align: center;
+                    }
+TD.data_l           {
+                    background-color: rgb(255,255,255);
+                    text-align: Left;
+                    font-size: 10pt;
+                    font-family: "Courier New";
+                    vertical-align: center;
+                    }
+TD.data_r           {
+                    background-color: rgb(255,255,255);
+                    text-align: Right;
+                    font-size: 10pt;
+                    font-family: "Courier New";
+                    vertical-align: center;
+                    }
+TR                  {
+                    background-color: rgb(255,255,255);
+                    }
+TR.reportlist       {
+                    background-color: rgb(221,225,226);
+                    }
+TR.ttl              {
+                    background-color: rgb(180,180,180);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+TR.today            {
+                    background-color: rgb(127,127,127);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+TR.odd              {
+                    background-color: rgb(255,255,255);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+TR.even             {
+                    background-color: rgb(214,214,214);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+TD.today            {
+                    background-color: rgb(127,127,127);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+TD.odd              {
+                    background-color: rgb(255,255,255);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+TD.even             {
+                    background-color: rgb(214,214,214);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    }
+/* Table Header that spans across the top */
+TD.tblhead          {
+                    background-color: rgb(81,86,91);
+                    text-align: center;
+                    background-image:url(../pictures/table_gradient.gif);
+                    background-repeat:repeat-x;
+                    font-size: 10pt;
+                    font-weight: bold;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(255,255,255)
+                    }
+TH.tblhead          {
+                    background-color: rgb(81,86,91);
+                    text-align: center;
+                    background-image:url(../pictures/table_gradient.gif);
+                    background-repeat:repeat-x;
+                    font-size: 10pt;
+                    font-weight: bold;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(255,255,255)
+                    }
+TD.tblhead_l        {
+                    background-color: rgb(81,86,91);
+                    text-align: left;
+                    background-image:url(../pictures/table_gradient.gif);
+                    background-repeat:repeat-x;
+                    font-size: 10pt;
+                    font-weight: bold;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(255,255,255)
+                    }
+TD.tblhead_r        {
+                    background-color: rgb(81,86,91);
+                    text-align: right;
+                    background-image:url(../pictures/table_gradient.gif);
+                    background-repeat:repeat-x;
+                    font-size: 10pt;
+                    font-weight: bold;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(255,255,255)
+                    }
+/* Column that is sorted */
+TD.sortby          {
+                    background-color: rgb(232,232,232); /* light gray for column that is sorted */
+                    text-align: left;
+                    font-size: 10pt;
+                    padding-left: 5pt;
+                    padding-right: 5pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(0,0,0)
+                    }
+/* Columns that are NOT sorted */
+TD.unsort          {
+                    background-color: rgb(255,255,255);
+                    text-align: left;
+                    font-size: 10pt;
+                    padding-left: 5pt;
+                    padding-right: 5pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(0,0,0)
+                    }
+/* Header Cell that is NOT sorted */
+TH.colhead_stat     {
+                    background-color: rgb(243,176,88);
+                    text-align: center;
+                    font-size: 9pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: center;
+                    }
+TH.colhead          {
+                    background-color: rgb(243,176,88);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: top;
+                    }
+                    /*
+                    background-image:url(../pictures/sort.gif);
+                    background-repeat:no-repeat;
+                    */
+TH.colheadleft      {
+                    background-color: rgb(243,176,88);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: top;
+                    }
+TH.colheadcenter    {
+                    background-color: rgb(243,176,88);
+                    text-align: center;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: top;
+                    }
+TH.colheadright     {
+                    background-color: rgb(243,176,88);
+                    text-align: right;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: top;
+                    }
+/* Header Cell that IS sorted */
+TH.colsort          {
+                    background-color: rgb(220,153,65);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    vertical-align: top;
+                    font-weight: bold;
+                    color: rgb(255,255,255);
+                    }
+                    /*
+                    background-image:url(../pictures/sort_yellow.gif);
+                    background-repeat:no-repeat;
+                    */
+TD.colhead          {
+                    background-color: rgb(243,176,88);
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    text-align: left;
+                    vertical-align: top;
+                    }
+                    /*
+                    background-image:url(../pictures/sort.gif);
+                    background-repeat:no-repeat;
+                    */
+TD.colheadtop       {
+                    background-color: rgb(243,176,88);
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    text-align: left;
+                    vertical-align: top;
+                    }
+TD.colheadbtm       {
+                    background-color: rgb(243,176,88);
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    text-align: left;
+                    vertical-align: bottom;
+                    }
+TD.colheadcntr      {
+                    background-color: rgb(243,176,88);
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    text-align: center;
+                    vertical-align: bottom;
+                    }
+TD.colheadspacer    {
+                    background-color: rgb(255,155,75);
+                    }
+TD.colheadleft      {
+                    background-color: rgb(243,176,88);
+                    text-align: left;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    text-align: left;
+                    vertical-align: top;
+                    }
+TD.colheadcenter    {
+                    background-color: rgb(243,176,88);
+                    text-align: center;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: top;
+                    }
+TD.colheadright     {
+                    background-color: rgb(243,176,88);
+                    text-align: right;
+                    font-size: 10pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    font-weight: bold;
+                    vertical-align: top;
+                    }
+TD.tblhead2          {
+                    background-color: rgb(102,102,153);
+                    text-align: left;
+                    font-size: 12pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    color: rgb(255,255,255)
+                    }
+TH.colheadctr       {
+                    background-color: rgb(153,153,204);
+                    text-align: center;
+                    font-size: 10pt;
+                    font-weight: bold;
+                    }
+.white             {
+                    background-color: rgb(255,255,255);
+                    padding-left: 30pt;
+                    padding-top: 20pt;
+                    padding-bottom: 20pt;
+                    padding-right: 20pt;
+                    font-size: 90%;
+                    line-height: 150%;
+                    border-top: thin solid;
+                    border-bottom: thin solid;
+                    border-left: thin solid;
+                    border-right: thin solid;
+                    border-color: rgb(0,0,102);
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.searchhead         {
+                    color: rgb(51,51,204);
+                    font-weight: bold;
+                    font-size: 12pt;
+                    font-family: "arial black, arial, helvetica, sans-serif";
+                    }
+.logo               {
+                    background-color: rgb(82,121,184);
+                    }
+.highlight          {
+                    color: rgb(255,255,255);
+                    font-weight: normal;
+                    text-align: center;
+                    }
+.search             {
+                    color: rgb(255,255,255);
+                    font-weight: bold;
+                    text-align: center;
+                    font-size: 12pt;
+                    font-family: "verdana, arial, helvetica, sans-serif";
+                    }
+.searchterm         {
+                    color: rgb(255,255,255);
+                    font-weight: bold;
+                    font-size: 12pt;
+                    }
+.searchhelp         {
+                    color: rgb(0,0,0);
+                    font-weight: bold;
+                    font-family: "courier, verdana, arial, helvetica, sans-serif";
+                    background-color: rgb(255,204,51);
+                    font-size: 12pt;
+                    }
+.shadow             {
+                    background-image: url("../pictures/shadow.gif");
+                    background-repeat: repeat-x;
+                    }
+.shadow2            {
+                    background-image: url("../pictures/shadow2.gif");
+                    background-repeat: repeat-x;
+                    }
+FONT.head2          {
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 11pt;
+                    font-weight: bold;
+                    color: rgb(0,0,0);
+                    }
+FONT.nav_head       {
+                    text-indent: -20pt;
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    font-size: 12pt;
+                    font-weight: bold;
+                    color: rgb(0,0,0)
+                    }
+FONT.oratitle       {
+                    font-family: "Arial";
+                    font-size: 14pt;
+                    font-weight: bold;
+                    color: rgb(220,220,155);
+                    }
+FONT.logotext       {
+                    font-family: "arial, helvetica, sans-serif";
+                    font-size: 9pt;
+                    font-style: italic;
+                    font-weight: bold;
+                    color: rgb(0,0,0);
+                    }
+UL.leftarrow        {
+                    list-style: lower-alpha outside;
+                    margin-top: 10pt;
+                    margin-left: 35pt;
+                    margin-bottom: 8pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    font-size: 10pt;
+                    font-weight: normal;
+                    color: rgb(0,0,0);
+                    line-height: 150%;
+                    }
+a:visited           {
+                    color: rgb(153,51,153);
+                    text-decoration: none;
+                    font-size: 11pt;
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    }
+a:link              {
+                    color: rgb(0,0,255);
+                    text-decoration: none;
+                    font-size: 11pt;
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    }
+a:hover             {
+                    color: rgb(0,0,255);
+                    text-decoration: underline;
+                    font-size: 11pt;
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    }
+a:active            {
+                    color: rgb(0,0,255);
+                    text-decoration: underline;
+                    font-size: 11pt;
+                    style: inset;
+                    font-family: "arial, verdana, helvetica, sans-serif";
+                    background-color: rgb(200,200,200);
+                    }
+a.reverse:visited        {
+                    color: rgb(0,0,0); text-decoration: none; font-weight: normal; font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.reverse:link           {
+                    color: rgb(0,0,0); text-decoration: none; font-weight: normal; font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.reverse:hover     {
+                    color: rgb(0,0,0); text-decoration: underline; font-weight: normal; font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.reverse:active         {
+                    color: rgb(0,0,0);
+                    font-weight: normal;
+                    font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.classy:active    {
+                    color: rgb(81,76,71);
+                    font-weight: underline;
+                    font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.classy:visited    {
+                    color: rgb(81,76,71);
+                    text-decoration: none;
+                    font-weight: normal;
+                    font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.classy:link       {
+                    color: rgb(81,76,71);
+                    text-decoration: none;
+                    font-weight: normal;
+                    font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+a.classy:hover      {
+                    color: rgb(81,76,71);
+                    text-decoration: underline;
+                    font-weight: normal;
+                    font-size: 9pt;
+                    font-family: "verdana, helvetica, sans-serif";
+                    }
+/* ******************************************************************** */
+.hoverTable         {
+                    width:75%; 
+                    border-collapse:collapse; 
+                    }
+.hoverTable td      { 
+		                padding:7px;
+/*		                border:#4e95f4 1px solid;*/
+		                border:#000000 1px solid;
+                    }
+/* Define the default color for all the table rows */
+.hoverTable tr      {
+                    background: #b8d1f3;
+                    }
+/* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+                    background-color: #ffff99;
+                    }
+/* ******************************************************************** */
+.hoverTableData     {
+                    width:75%; 
+                    border-collapse:collapse; 
+                    }
+.hoverTableData td  { 
+                    font-family: "Courier New";
+		                padding:4px;
+		                border:#000000 1px solid;
+                    }
+.hoverTableData tr  {
+                    background: #b8d1f3;
+                    }
+.hoverTableData tr:hover {
+                    background-color: #ffff99;
+                    }
+/* ******************************************************************** */
+.hoverTableData85   {
+                    width:85%; 
+                    border-collapse:collapse; 
+                    }
+.hoverTableData85 td  { 
+                    font-family: "Courier New";
+		                padding:7px;
+		                border:#000000 1px solid;
+                    }
+.hoverTableData85 tr  {
+                    background: #b8d1f3;
+                    }
+.hoverTableData85 tr:hover {
+                    background-color: #ffff99;
+                    }
+/* ******************************************************************** */
+.hoverTableData90   {
+                    width:90%; 
+                    border-collapse:collapse; 
+                    }
+.hoverTableData90 td  { 
+                    font-family: "Courier New";
+		                padding:7px;
+		                border:#000000 1px solid;
+                    }
+.hoverTableData90 tr  {
+                    background: #b8d1f3;
+                    }
+.hoverTableData90 tr:hover {
+                    background-color: #ffff99;
+                    }
+/* ******************************************************************** */
+.hoverTableData95   {
+                    width:95%; 
+                    border-collapse:collapse; 
+                    }
+.hoverTableData95 td  { 
+                    font-family: "Courier New";
+		                padding:5px;
+		                border:#000000 1px solid;
+                    }
+.hoverTableData95 tr  {
+                    background: #b8d1f3;
+                    }
+.hoverTableData95 tr:hover {
+                    background-color: #ffff99;
+                    }
+/* ******************************************************************** */
+table.quest_item    {
+                    border: 10px solid #b8d1f3;
+                    border-collapse: collapse;
+                    padding:7px;
+                    width:100%
+                    }
+th.quest_item       {
+                    border: 1px solid #b8d1f3;
+                    border-collapse: collapse;
+                    padding:7px;
+                    text-align: center
+                    }
+td.quest_item       {
+                    border: 1px solid #b8d1f3;
+                    border-collapse: collapse;
+                    padding:7px;
+                    text-align: center
+                    }
+/* ******************************************************************** */
+-->
+</style>
+</head>
