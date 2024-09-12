@@ -9,8 +9,7 @@
     global $db_pass;
     global $db_conn;
     $db_user = 'soccer_web';
-    $db_pass = 'eq1';
-#    $db_conn = 'soccer_web';
+    $db_pass = 'soccer_web';
     $db_conn = 'soccer_web';
 #      $conn = @oci_connect($_SESSION[ 'connection' ][ 'user' ], $_SESSION[ 'connection' ][ 'password' ], $_SESSION[ 'connection' ][ 'service' ]);
       $conn = oci_connect($db_user, $db_pass, $db_conn);
