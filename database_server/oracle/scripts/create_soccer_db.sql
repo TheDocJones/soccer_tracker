@@ -4,6 +4,21 @@
 
 
 --------------------------------------------------------
+--  DDL for directories
+--------------------------------------------------------
+CREATE DIRECTORY soccer_bin_dir AS '/mnt/point/soccer_tracker/bin'
+;
+CREATE DIRECTORY soccer_data_dir AS '/mnt/point/soccer_tracker/data'
+;
+CREATE DIRECTORY soccer_processing_dir AS '/mnt/point/soccer_tracker/data/processing'
+;
+CREATE DIRECTORY soccer_loaded_dir AS '/mnt/point/soccer_tracker/data/loaded'
+;
+--------------------------------------------------------
+
+
+
+--------------------------------------------------------
 --  DDL for Sequences
 --------------------------------------------------------
 CREATE SEQUENCE league_id_seq
@@ -266,21 +281,6 @@ BEGIN
 END;
 /
 ALTER TRIGGER teams_trg1 ENABLE
-;
---------------------------------------------------------
-
-
-
---------------------------------------------------------
---  DDL for directories
---------------------------------------------------------
-CREATE DIRECTORY soccer_bin_dir AS '/mnt/point/soccer_tracker/bin'
-;
-CREATE DIRECTORY soccer_data_dir AS '/mnt/point/soccer_tracker/data'
-;
-CREATE DIRECTORY soccer_processing_dir AS '/mnt/point/soccer_tracker/data/processing'
-;
-CREATE DIRECTORY soccer_loaded_dir AS '/mnt/point/soccer_tracker/data/loaded'
 ;
 --------------------------------------------------------
 
